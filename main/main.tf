@@ -1,3 +1,13 @@
+terraform {
+  backend "s3" {
+    bucket         = "terraform-up-and-running-rjr"
+    key            = "main"
+    region         = "us-east-1"
+    encrypt        = true
+    dynamodb_table = "terraform-lock"
+  }
+}
+
 provider "aws" {
   region = "us-east-1"
 }
