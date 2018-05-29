@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket         = "terraform-up-and-running-rjr"
-    key            = "main"
+    key            = "stage/services/webserver-cluster/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
     dynamodb_table = "terraform-lock"
@@ -99,15 +99,6 @@ resource "aws_security_group" "elb" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
-
-variable "server_port" {
-  description = "The port the server will use for HTTP requests."
-  default     = 8080
-}
-
-output "elb_dns_name" {
-  value = "${aws_elb.example.dns_name}"
 }
 
 data "aws_availability_zones" "all" {}
