@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket         = "terraform-up-and-running-rjr"
-    key            = "stage/data-stores/mysql/terraform.tfstate"
+    key            = "prod/data-stores/mysql/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
     dynamodb_table = "terraform-lock"
@@ -15,7 +15,7 @@ provider "aws" {
 module "mysql" {
   source = "../../../modules/data-stores/mysql"
 
-  db_name     = "example_database_stage"
+  db_name     = "example_database_prod"
   db_username = "admin"
   db_password = "${var.db_password}"
 }
