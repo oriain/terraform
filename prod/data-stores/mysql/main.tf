@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "mysql" {
-  source = "../../../modules/data-stores/mysql"
+  source = "git::git@github.com:oriain/terraform-modules.git//data-stores/mysql?ref=v0.0.1"
 
   db_name     = "example_database_prod"
   db_username = "admin"
