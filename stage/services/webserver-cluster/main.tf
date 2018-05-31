@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "webserver_cluster" {
-  source = "git::git@github.com:oriain/terraform-modules.git//services/webserver-cluster?ref=v0.0.1"
+  source = "git::git@github.com:oriain/terraform-modules.git//services/webserver-cluster"
 
   ami         = "ami-40d28157"
   server_text = "New server text"
