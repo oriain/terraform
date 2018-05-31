@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "The AWS region to use."
-  default     = "us-west-1"
+  default     = "us-eest-1"
 }
 
 variable "cluster_name" {
