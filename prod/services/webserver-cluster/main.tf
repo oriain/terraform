@@ -27,11 +27,10 @@ module "webserver_cluster" {
   # db_remote_state_bucket = "terraform-up-and-running"
   # db_remote_state_key    = "stage/data-stores/mysql/terraform.tfstate"
 
-  instance_type        = "t2.micro"
-  min_size             = 2
-  max_size             = 10
-  enable_autoscaling   = true
-  enable_new_user_data = false
+  instance_type      = "t2.micro"
+  min_size           = 2
+  max_size           = 10
+  enable_autoscaling = true
 }
 
 data "aws_ami" "ubuntu" {
